@@ -6,7 +6,7 @@ app_name = 'pages'
 
 urlpatterns = [
     path('user-wishlist/', user_wishlist_page_view, name='user-wishlist'),
-    path('about-us/', about_us_page_view, name='about-us'),
+    path('about-us/', about_us_page_view, name='about'),
     path('404/', n404_page_view, name='404'),
     path('contact/', contact_page_view, name='contact'),
     path('', home_page_view, name='home')

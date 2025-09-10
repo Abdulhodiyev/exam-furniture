@@ -1,3 +1,4 @@
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 
 
@@ -16,3 +17,7 @@ class ContactModel(models.Model):
     class Meta:
         verbose_name = "Contact"
         verbose_name_plural = "Contacts"
+
+
+class AboutPageModel(models.Model):
+    bio = RichTextUploadingField()

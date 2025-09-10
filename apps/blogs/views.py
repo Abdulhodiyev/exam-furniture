@@ -26,8 +26,8 @@ def blogs_detail_view(request, pk):
     categories = CategoryModel.objects.all()
     tags = TagModel.objects.all()
     related_posts = PostModel.objects.filter(
-        category=post.category
-    ).exclude(id=post.id)
+        tags__in=post.tags.all()
+    ).exclude(id=post.id).distinct()
     context = {
         'post': post,
         'categories': categories,

@@ -245,10 +245,9 @@
                                                         </div>
                                                         <div class="late-item">
                                                             <p class="content-title">
-                                                                <a href="{% url 'blogs:detail' pk=related.id %}">Lorem ipsum dolor sit amet</a>
+                                                                <a href="blog-detail.html">{{ related.title }}</a>
                                                             </p>
-                                                            <p class="description">Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin,
-                                                                lorem quis bibendum auctor.
+                                                            <p class="description">{{ related.description|safe }}
                                                             </p>
                                                         </div>
                                                     </div>

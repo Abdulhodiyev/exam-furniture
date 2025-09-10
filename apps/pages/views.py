@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 
 from apps.pages.forms import ContactForm
+from apps.pages.models import AboutPageModel
 
 
 def home_page_view(request):
@@ -29,7 +30,12 @@ def n404_page_view(request):
     return render(request, 'pages/404.html')
 
 def about_us_page_view(request):
-    return render(request, 'pages/about-us.html')
+    about = AboutPageModel.objects.all()
+
+    context = {
+        'about': about,
+    }
+    return render(request, 'pages/about-us.html', context)
 
 def user_wishlist_page_view(request):
     return render(request, 'pages/user-wishlist.html')
